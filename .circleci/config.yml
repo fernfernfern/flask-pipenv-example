@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  po: fernfernfern/python-orb@dev:aplha
+  po: fernfernfern/python-orb@0.0.3
 
 workflows:
   test:
