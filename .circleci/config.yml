@@ -1,12 +1,13 @@
 version: 2.1
 
 orbs:
-  po: fernfernfern/python-orb@0.0.4
+  po: fernfernfern/python-orb@0.0.5
 
 workflows:
   test:
     jobs:
       - po/python-job:
+          python-version: "3.6"
           install-deps: true
           test-steps: |
             pipenv run python -m pytest
