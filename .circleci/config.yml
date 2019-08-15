@@ -7,7 +7,7 @@ workflows:
   test:
     jobs:
       - po/python-job:
-          python-version: "3.6"
+          python-version: "3.7"
           install-deps: true
           test-steps: |
             pipenv run python -m pytest
