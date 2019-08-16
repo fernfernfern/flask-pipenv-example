@@ -3,17 +3,13 @@ version: 2.1
 orbs:
   po: fernfernfern/python-orb@0.0.10
 
-executors:
-  default:
-    po/default:
-      python-version: "3.6"
-      debian-release: "jessie"
 
 jobs:
   my-job:
-    docker: 
-      - image: default
-      - image: postgres
+    parameters:
+    e:
+      type: executor
+    executor: << parameters.e >>
     steps:
       - po/install-pipenv:
           and-deps: true
@@ -23,4 +19,8 @@ jobs:
 workflows:
   test:
     jobs:
-      - my-job
+      - my-job:
+          e:
+            name: default
+            python-version: "3.7"
+            debian-release: jessies
