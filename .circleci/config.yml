@@ -21,4 +21,4 @@ workflows:
           e:
             name: po/default
             python-version: "3.7"
-            debian-release: jessies
+            debian-release: jessie
