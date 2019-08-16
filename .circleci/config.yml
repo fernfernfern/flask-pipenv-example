@@ -3,7 +3,6 @@ version: 2.1
 orbs:
   po: fernfernfern/python-orb@0.0.10
 
-
 jobs:
   my-job:
     parameters:
@@ -15,12 +14,11 @@ jobs:
           and-deps: true
       - run: echo do anything you want to prepare
 
-
 workflows:
   test:
     jobs:
       - my-job:
           e:
-            name: default
+            name: po/default
             python-version: "3.7"
             debian-release: jessies
