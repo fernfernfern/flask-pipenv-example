@@ -10,6 +10,7 @@ jobs:
         type: executor
     executor: << parameters.e >>
     steps:
+      - checkout 
       - po/install-pipenv:
           and-deps: true
       - run: echo do anything you want to prepare
